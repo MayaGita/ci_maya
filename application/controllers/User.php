@@ -14,6 +14,6 @@ class User extends Ci_controller {
 	public function index()
 	{
 		$data['user'] = $this->db->get_where('user',['email'=> $this->session->userdata('email')])->row_array();
-		echo 'Halo' .'  '.  $data['user']['name'];
+		$this->load->view('user/index',$data);
 	}
 }
